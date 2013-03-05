@@ -1,4 +1,6 @@
-java-casperjs-support
-=====================
+junit-casperjs
+==============
 
-Support to CasperJS to Java Environment
+JUnit Runner to CasperJS Tests.
+
+Maven repository: http://raonifn.github.com/repository/releases/
