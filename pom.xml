@@ -41,6 +41,15 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>repo</id>
+			<name>Repository Name</name>
+			<!-- url>file:///home2/raoni/projs/repository/releases</url> -->
+			<url>file:///tmp/releases</url>
+		</repository>
+	</distributionManagement>
+
 
 	<scm>
 		<connection>scm:git:https://github.com/raonifn/junit-casperjs.git</connection>
