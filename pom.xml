@@ -18,4 +18,10 @@
 			<version>1.2.58</version>
 		</dependency>
 	</dependencies>
+
+	<scm>
+		<connection>scm:git:https://github.com/raonifn/junit-casperjs.git</connection>
+		<!-- developerConnection>scm:git:https://raonifn@github.com/vitorsouza/EngeSoft.git</developerConnection-->
+		<url>https://github.com/raonifn/junit-casperjs</url>
+	</scm>
 </project>
