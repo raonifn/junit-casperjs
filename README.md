@@ -18,7 +18,10 @@ casper.run(function() {
 });
 ```
 
-##Travis ![Build Status](https://travis-ci.org/raonifn/junit-casperjs.png?branch=master)
+##Travis CI
+
+![Build Status](https://travis-ci.org/raonifn/junit-casperjs.png?branch=master)
+
 https://travis-ci.org/raonifn/junit-casperjs
 
 ## Example
