@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 
 	<properties>
-		<mycontainer-version>1.2.58</mycontainer-version>
+		<mycontainer-version>1.2.56</mycontainer-version>
 	</properties>
 
 	<dependencies>
