@@ -22,5 +22,5 @@ casper.then(function() {
 // Is important to CasperRunner that the test exits with error when there are
 // failures.
 casper.run(function() {
-	this.exit(this.test.getFailures().length, 1000);
+	this.exit(this.test.getFailures().length);
 });
