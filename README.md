@@ -6,7 +6,7 @@ JUnit Runner to CasperJS (http://casperjs.org/) Tests.
 All files sufixed with `.test.js` on classpath will be executed as a TestCase.
 
 **IMPORTANT**
-The casperjs and phantomjs (http://phantmjs.org/) MUST be in the PATH to CasperRunner works.
+The casperjs and phantomjs (http://phantomjs.org/) MUST be in the PATH to CasperRunner works.
 
 **IMPORTANT 2**
 The CasperRunner depends that casperjs returns a `exit code > 0` to fail a test. Then, it's recomended the code below:
