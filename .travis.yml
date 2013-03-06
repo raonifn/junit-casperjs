@@ -9,5 +9,5 @@ jdk:
 before_script:
   - wget "https://github.com/n1k0/casperjs/tarball/1.0.2" -O casper.tar.gz
   - tar -xvzf casper.tar.gz
-  - find -name "n1k0-casperjs*" -type d -exec mv -v {} casperjs \;
+  - mv $(find -name "n1k0-casperjs*" -type d) casperjs
   - export PATH=$PATH:$(pwd)/casperjs/bin
