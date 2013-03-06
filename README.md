@@ -1,5 +1,5 @@
-junit-casperjs ![Build Status](https://travis-ci.org/raonifn/junit-casperjs.png?branch=master)
-================================================================================================
+junit-casperjs 
+==============
 
 JUnit Runner to CasperJS (http://casperjs.org/) Tests.
 
@@ -17,6 +17,9 @@ casper.run(function() {
   this.exit(this.test.getFailures().length);
 });
 ```
+
+##Travis ![Build Status](https://travis-ci.org/raonifn/junit-casperjs.png?branch=master)
+https://travis-ci.org/raonifn/junit-casperjs
 
 ## Example
 ```java
