@@ -25,58 +25,9 @@ casper.run(function() {
 https://travis-ci.org/raonifn/junit-casperjs
 
 ## Example
-```java
-@RunWith(CasperRunner.class)
-public class CasperTest {
+ * JUnit Test Class: [CasperTest.java](src/test/java/com/github/raonifn/casperjs/junit/CasperTest.java)
 
-	@Before
-	public void before() throws Exception {
-    // Starting the webserver...
-	}
-
-	@CasperEnvironment
-	public Map<String, String> env() {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("START_URL", "http://localhost:9898/casper");
-		return map;
-
-	}
-
-	@After
-	public void after() {
-		// Stopping the webserver...
-	}
-}
-```
-example.test.js
-```javascript
-var sys = require('system');
-var url = sys.env.START_URL;
-var casper = require('casper').create({
-	verbose : true,
-	logLevel : "debug",
-	colorizerType : 'Dummy'
-});
-
-if (!url) {
-	this.casper.die('START_URL not found');
-}
-
-casper.start(url);
-
-casper.then(function() {
-	var text = this.evaluate(function() {
-		return __utils__.findOne('h1').innerHTML;
-	});
-	this.test.assertEquals(text, 'Hello World')
-});
-
-// Is important to CasperRunner that the test exits with error when there are
-// failures.
-casper.run(function() {
-	this.exit(this.test.getFailures().length, 1000);
-});
-```
+ * Casper Test: [example.test.js](src/test/casperjs/example.test.js)
 
 ## Maven users
 Maven repository: http://raonifn.github.com/repository/releases/
