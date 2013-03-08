@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -29,12 +30,12 @@ public class CasperExecutor {
 		this.env.add(name + "=" + value);
 	}
 
-	public int executeCasper(String pathToFile) {
+	public int executeCasper(String pathToFile, String... arguments) {
 		Runtime runtime = Runtime.getRuntime();
 		File dir = new File(pathToFile).getParentFile();
 
 		try {
-			Process exec = runtime.exec(new String[] { casperPath, pathToFile }, mountEnv(), dir);
+			Process exec = runtime.exec(mountCommandLine(pathToFile, arguments), mountEnv(), dir);
 
 			if (!outs.isEmpty()) {
 				Pipe pipe = new Pipe(exec.getInputStream(), outs);
@@ -53,6 +54,14 @@ public class CasperExecutor {
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	private String[] mountCommandLine(String pathToFile, String[] arguments) {
+		List<String> cmd = new ArrayList<String>(arguments.length + 2);
+		cmd.add(casperPath);
+		cmd.add(pathToFile);
+		cmd.addAll(Arrays.asList(arguments));
+		return cmd.toArray(new String[cmd.size()]);
 	}
 
 	private String[] mountEnv() {
@@ -75,10 +84,4 @@ public class CasperExecutor {
 		this.errs.add(err);
 	}
 
-	public static void main(String[] args) {
-//		CasperExecutor executor = new CasperExecutor("/home2/raoni/sandbox/casperjs/bin/casperjs");
-//		executor.addEnv("PHANTOMJS_EXECUTABLE", "/home2/raoni/sandbox/phantomjs/bin/phantomjs");
-//		executor.pipeOut(System.out);
-//		System.out.printf("result %d", executor.executeCasper("/home2/raoni/sandbox/test/test.js"));
-	}
 }

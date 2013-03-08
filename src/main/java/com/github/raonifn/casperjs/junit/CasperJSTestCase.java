@@ -53,7 +53,8 @@ public class CasperJSTestCase {
 				ByteArrayOutputStream out = new ByteArrayOutputStream();
 				executor.pipeOut(out);
 				executor.pipeOut(System.out);
-				int result = executor.executeCasper(path);
+				String fileName = path.replaceAll(".*\\/(.*)", "$1");
+				int result = executor.executeCasper(path, "--script-name= " + fileName);
 				if (result == 0) {
 					notifier.fireTestFinished(description);
 					return;
