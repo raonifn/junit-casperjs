@@ -37,7 +37,7 @@ Maven repository: http://raonifn.github.com/repository/releases/
 <dependency>
    <groupId>com.github.raonifn</groupId>
    <artifactId>casperjs-junit</artifactId>
-   <version>0.1.1</version>
+   <version>0.2.0</version>
 </dependency>
 ```
 
