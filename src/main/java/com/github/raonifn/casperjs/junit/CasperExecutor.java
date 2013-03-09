@@ -33,6 +33,11 @@ public class CasperExecutor {
 	public int executeCasper(String pathToFile, String... arguments) {
 		Runtime runtime = Runtime.getRuntime();
 		File dir = new File(pathToFile).getParentFile();
+		
+		String phantomjs = System.getProperty("phantomjs.executable");
+		if (phantomjs != null) {
+			addEnv("PHANTOMJS_EXECUTABLE", phantomjs);
+		}
 
 		try {
 			Process exec = runtime.exec(mountCommandLine(pathToFile, arguments), mountEnv(), dir);
