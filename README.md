@@ -6,9 +6,6 @@ JUnit Runner to CasperJS (http://casperjs.org/) Tests.
 All files sufixed with `.test.js` on classpath will be executed as a TestCase.
 
 **IMPORTANT**
-The casperjs and phantomjs (http://phantomjs.org/) MUST be in the PATH to CasperRunner works.
-
-**IMPORTANT 2**
 The CasperRunner depends that casperjs returns a `exit code > 0` to fail a test. Then, it's recomended the code below:
 ```javascript
 var casper = require('casper');
@@ -18,11 +15,20 @@ casper.run(function() {
 });
 ```
 
+## Current Version
+0.3.0
+
 ##Travis CI
 
 ![Build Status](https://travis-ci.org/raonifn/junit-casperjs.png?branch=master)
 
 https://travis-ci.org/raonifn/junit-casperjs
+
+##PhantomJS and CasperJS executable
+If the `casperjs` or `phantomjs` isn't in the PATH, you may set the java System Properties `casperjs.executable` and `phantomjs.executable` to say to `CasperRunner` where the executables are, e.g.: 
+```
+mvn test -Dcasperjs.executable=/opt/casperjs/bin/casperjs -Dphantomjs.executable=/opt/phantomjs/bin/phantomjs
+```
 
 ## Example
  * JUnit Test Class: [CasperTest.java](src/test/java/com/github/raonifn/casperjs/junit/CasperTest.java)
@@ -37,7 +43,7 @@ Maven repository: http://raonifn.github.com/repository/releases/
 <dependency>
    <groupId>com.github.raonifn</groupId>
    <artifactId>casperjs-junit</artifactId>
-   <version>0.2.0</version>
+   <version>0.3.0</version>
 </dependency>
 ```
 
