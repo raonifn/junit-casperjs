@@ -28,6 +28,10 @@ public class CasperTest {
 
 	@Before
 	public void before() throws Exception {
+		if (System.getProperty("phantomjs.executable") == null) {
+			System.setProperty("phantomjs.executable", "phantomjs");
+		}
+
 		builder = new ContainerBuilder();
 		builder.deployVMShutdownHook();
 
