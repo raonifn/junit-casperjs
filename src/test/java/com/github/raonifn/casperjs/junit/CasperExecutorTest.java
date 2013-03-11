@@ -6,6 +6,8 @@ import static org.junit.Assert.fail;
 
 import java.net.URL;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class CasperExecutorTest {
@@ -25,10 +27,13 @@ public class CasperExecutorTest {
 			fail("Must throw exception");
 		} catch (RuntimeException ex) {
 			assertTrue(ex.getMessage().contains("./foo.bar"));
-		} finally {
-			System.setProperty("casperjs.executable", null);
 		}
 
+	}
+
+	@After
+	public void after() {
+		System.clearProperty("casperjs.executable");
 	}
 
 	private CasperExecutor createExecutor() {
