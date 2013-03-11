@@ -25,6 +25,8 @@ public class CasperExecutorTest {
 			fail("Must throw exception");
 		} catch (RuntimeException ex) {
 			assertTrue(ex.getMessage().contains("./foo.bar"));
+		} finally {
+			System.setProperty("casperjs.executable", null);
 		}
 
 	}
