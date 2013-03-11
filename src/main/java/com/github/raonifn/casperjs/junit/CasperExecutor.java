@@ -24,6 +24,10 @@ public class CasperExecutor {
 	}
 
 	public CasperExecutor() {
+		String casperjs = System.getProperty("casperjs.executable");
+		if (casperjs != null) {
+			this.casperPath = casperjs;
+		}
 	}
 
 	public void addEnv(String name, String value) {
