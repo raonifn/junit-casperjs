@@ -20,9 +20,7 @@ casper.run(function() {
 
 ##Travis CI
 
-![Build Status](https://travis-ci.org/raonifn/junit-casperjs.png?branch=master)
-
-https://travis-ci.org/raonifn/junit-casperjs
+[![Build Status](https://travis-ci.org/raonifn/junit-casperjs.png)](https://travis-ci.org/raonifn/junit-casperjs)
 
 ##PhantomJS and CasperJS executable
 If the `casperjs` or `phantomjs` isn't in the PATH, you may set the java System Properties `casperjs.executable` and `phantomjs.executable` to say to `CasperRunner` where the executables are, e.g.: 
