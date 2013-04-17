@@ -76,11 +76,13 @@ public class CasperExecutor {
 	private String[] mountEnv() {
 		Map<String, String> sysEnv = System.getenv();
 		List<String> ret = new ArrayList<String>(sysEnv.size() + env.size());
-		ret.addAll(env);
 
 		for (Entry<String, String> envEntry : sysEnv.entrySet()) {
 			ret.add(envEntry.getKey() + "=" + envEntry.getValue());
 		}
+
+		ret.addAll(env);
+
 		String[] envArray = ret.toArray(new String[ret.size()]);
 		return envArray;
 	}
