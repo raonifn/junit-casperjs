@@ -9,7 +9,7 @@ All files sufixed with `.test.js` on classpath will be executed as a TestCase.
 The CasperRunner depends that casperjs returns a `exit code > 0` to fail a test. Then, it's recomended the code below:
 ```javascript
 var casper = require('casper');
-//...
+//... 
 casper.run(function() {
   this.exit(this.test.getFailures().length);
 });
