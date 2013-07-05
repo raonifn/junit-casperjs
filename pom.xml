@@ -69,7 +69,26 @@
 					<source>1.5</source>
 					<target>1.5</target>
 				</configuration>
-			</plugin>
+<plugin>
+      <groupId>com.github.github</groupId>
+      <artifactId>downloads-maven-plugin</artifactId>
+      <version>0.6</version>
+      <configuration>
+       <description>${project.version} release of ${project.name}</description>
+       <override>true</override>
+       <includeAttached>true</includeAttached>
+       <server>github.com</server>
+      </configuration>
+      <executions>
+       <execution>
+        <goals>
+         <goal>upload</goal>
+        </goals>
+        <phase>deploy</phase>
+       </execution>
+      </executions>
+     </plugin>			</plugin>
+
 		</plugins>
 		<testResources>
 			<testResource>
