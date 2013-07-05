@@ -3,7 +3,7 @@
 	<name>casperjs-junit</name>
 	<groupId>com.github.raonifn</groupId>
 	<artifactId>casperjs-junit</artifactId>
-	<version>0.0.1.x</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<properties>
