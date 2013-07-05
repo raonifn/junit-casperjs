@@ -68,7 +68,7 @@
 				<configuration>
 					<source>1.5</source>
 					<target>1.5</target>
-				</configuration>
+				</configuration>			</plugin>
 <plugin>
       <groupId>com.github.github</groupId>
       <artifactId>downloads-maven-plugin</artifactId>
@@ -87,7 +87,7 @@
         <phase>deploy</phase>
        </execution>
       </executions>
-     </plugin>			</plugin>
+     </plugin>
 
 		</plugins>
 		<testResources>
