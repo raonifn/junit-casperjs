@@ -92,15 +92,10 @@
 	</build>
 
 	<distributionManagement>
-		<!--repository>
-			<id>repo</id>
-			<name>Repository Name</name>
-			<url>file:///home2/raoni/projs/repository/releases</url>
-		</repository-->
 		<repository>
 			<id>repo</id>
 			<name>Repository Name</name>
-			<url>scm:git:git@github.com:raonifn/junit-casperjs.git</url>
+			<url>file:///home2/raoni/projs/repository/releases</url>
 		</repository>
 
 	</distributionManagement>
