@@ -16,7 +16,7 @@ casper.run(function() {
 ```
 
 ## Current Version
-0.3.0
+0.4.0
 
 ##Travis CI
 
