@@ -37,6 +37,9 @@ public class CasperExecutor {
 	public int executeCasper(String pathToFile, String... arguments) {
 		Runtime runtime = Runtime.getRuntime();
 		File dir = new File(pathToFile).getParentFile();
+		if(!dir.exists()){
+			throw new IllegalArgumentException(String.format("Parent of '%s' does not exist", pathToFile));
+		}
 
 		String phantomjs = System.getProperty("phantomjs.executable");
 		if (phantomjs != null) {
@@ -44,7 +47,7 @@ public class CasperExecutor {
 		}
 
 		try {
-			Process exec = runtime.exec(mountCommandLine(pathToFile, arguments), mountEnv(), dir);
+			Process exec = runtime.exec(mountCommandLine(arguments), mountEnv(), dir);
 
 			if (!outs.isEmpty()) {
 				Pipe pipe = new Pipe(exec.getInputStream(), outs);
@@ -65,10 +68,9 @@ public class CasperExecutor {
 		}
 	}
 
-	private String[] mountCommandLine(String pathToFile, String[] arguments) {
-		List<String> cmd = new ArrayList<String>(arguments.length + 2);
+	private String[] mountCommandLine(String[] arguments) {
+		List<String> cmd = new ArrayList<String>(arguments.length + 1);
 		cmd.add(casperPath);
-		cmd.add(pathToFile);
 		cmd.addAll(Arrays.asList(arguments));
 		return cmd.toArray(new String[cmd.size()]);
 	}
