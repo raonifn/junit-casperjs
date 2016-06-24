@@ -1,10 +1,6 @@
 package com.github.raonifn.casperjs.junit;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.util.Map;
 
@@ -54,7 +50,7 @@ public class CasperJSTestCase {
 				executor.pipeOut(out);
 				executor.pipeOut(System.out);
 				String fileName = path.replaceAll(".*\\/(.*)", "$1");
-				int result = executor.executeCasper(path, "--script-name= " + fileName);
+				int result = executor.executeCasper(path, "test", new File(path).getAbsolutePath(), "--fail-fast=true");
 				if (result == 0) {
 					notifier.fireTestFinished(description);
 					return;
